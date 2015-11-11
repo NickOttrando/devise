@@ -27,7 +27,7 @@ module Devise
 
         base.class_eval do
           validates_presence_of   :encrypted_email, if: :email_required?
-          validates_uniqueness_of :encrypted_email, allow_blank: true, if: :email_changed?
+          validates_uniqueness_of :encrypted_email
           #validates_format_of     :email, with: email_regexp, allow_blank: true, if: :email_changed? #moved this to user model
 
           validates_presence_of     :password, if: :password_required?
